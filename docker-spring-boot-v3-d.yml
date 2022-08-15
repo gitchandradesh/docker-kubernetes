@@ -13,11 +13,14 @@ spec:
         app: docker-spring-boot-v3
     spec:
       containers:
-      - name: docker-spring-boot-v3
-        image: hdchandesh108/docker-spring-boot-v3
-        resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8083
+        - name: docker-spring-boot-v3
+          image: hdchandesh108/docker-spring-boot-v3
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"              
+            limits:
+              memory: "256Mi"
+              cpu: "500m"              
+          ports:
+            - containerPort: 8083

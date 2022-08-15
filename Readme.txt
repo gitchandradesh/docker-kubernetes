@@ -16,3 +16,13 @@ kubectl delete -f .\docker-spring-boot-v1-s.yml
 
 kubectl delete -f .\mongo-deployment.yml
 kubectl delete -f .\mongo-service.yml
+
+
+---------------------------------------------------
+default
+
+kubectl -n default get pods
+
+kubectl describe pod
+docker stats
+
