@@ -3,21 +3,21 @@ kind: Deployment
 metadata:
   name: docker-spring-boot-v3
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: docker-spring-boot-v2
+      app: docker-spring-boot-v3
   template:
     metadata:
       labels:
-        app: docker-spring-boot-v2
+        app: docker-spring-boot-v3
     spec:
       containers:
-      - name: docker-spring-boot-v2
-        image: hdchandesh108/docker-spring-boot-v2
+      - name: docker-spring-boot-v3
+        image: hdchandesh108/docker-spring-boot-v3
         resources:
           limits:
-            memory: "128Mi"
+            memory: "512Mi"
             cpu: "500m"
         ports:
-        - containerPort: 8082
+        - containerPort: 8083
