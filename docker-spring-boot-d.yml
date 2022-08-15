@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-spring-boot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-spring-boot
+  template:
+    metadata:
+      labels:
+        app: docker-spring-boot
+    spec:
+      containers:
+      - name: docker-spring-boot
+        image: hdchandesh108/docker-spring-boot
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8085
